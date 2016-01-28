@@ -12,7 +12,7 @@ Research and implement third-party APIs that provide additional information abou
 
 You can view the site by directly accessing:
 
-https://rawgit.com/FredGH/NeighborhoodMap/master/index.html
+rawgit.com/FredGH/NeighborhoodMap/master/index.html
 
 #### Usage
 
