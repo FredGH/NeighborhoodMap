@@ -10,7 +10,7 @@ function loadGoogleMap() {
     script.type = 'text/javascript';
     script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=false&callback=initialise';
     document.body.appendChild(script);
-};
+}
 
 window.onload = loadGoogleMap;
 
@@ -18,12 +18,12 @@ window.onload = loadGoogleMap;
 function initialise() {
 
     var mapOptions = {
-        zoom: 18,
+        zoom: 16,
         center: new google.maps.LatLng(51.454930, 0.007821)
     };
 
     if ($(window).width() <= 1080) {
-        mapOptions.zoom = 18;
+        mapOptions.zoom = 13;
     }
     if ($(window).width() < 850 || $(window).height() < 595) {
         hideNavigation();
@@ -33,24 +33,20 @@ function initialise() {
 
     setMarkers(markersModel);
     setAllMap();
-};
+}
 
 //Set the markers visibility
 function setAllMap() {
     for (var i = 0; i < markersModel.length; i++) {
         var marker = markersModel[i];
-        if (marker.visible() === true) {
-            marker.holdMarker.setMap(map);
-        } else {
-            marker.holdMarker.setMap(null);
-        }
+        marker.holdMarker.setMap(map);
     }
-};
+}
 
 //Get the street view image corresponding to marker lat/lng
 function getStreetViewImage(index) {
     streetViewImage = streetViewUrl + markersModel[index].lat + ',' + markersModel[index].lng + '&fov=75&heading=' + headingImageView[index] + '&pitch=10';
-};
+}
 
 //Locates  markers on the map
 //Sets infoWindows for each marker
@@ -99,7 +95,6 @@ function setMarkers(location) {
                     map.setZoom(16);
                 }
                 map.setCenter(marker.getPosition());
-                location[i].picBoolTest = true;
 
                 //get the info from the different ajax calls
                 getArticlesInformation(location[i]);
@@ -115,7 +110,6 @@ function setMarkers(location) {
                 infowindow.open(map, marker);
                 map.setZoom(16);
                 map.setCenter(marker.getPosition());
-                location[i].picBoolTest = true;
 
                 //get the info from the different ajax calls
                 getArticlesInformation(location[i]);
@@ -123,12 +117,16 @@ function setMarkers(location) {
             };
         })(location[i].holdMarker, i));
     }
-};
+}
 
 //Wrapper function that contains all the ajax call to get articles on the map
 function getArticlesInformation(location) {
     //get the info from the different ajax calls
-    getNyTimesInfo(location.city);
-    getWikkiInfo(location.borough);
+    //getNyTimesInfo(location.city);
+    //getWikkiInfo(location.borough);
 
-};
+    //viewModel.markersModel.city.subscribe(function(newValue) {getNyTimesInfo(newValue)});
+    //viewModel.markersModel.borough.subscribe(function(newValue) {getWikkiInfo(newValue)});
+}
+
+

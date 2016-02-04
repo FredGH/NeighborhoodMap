@@ -5,8 +5,7 @@ var isNavigationVisible = true;
 $(window).resize(function() {
     var windowWidth = $(window).width();
     var windowHeight = $(window).height();
-    if (windowWidth < 800 && isNavigationVisible) {
-        hideNavigation();
+    if (windowWidth < 800 && isNavigationVisible) {hideNavigation();
     } else if (windowHeight < 500 && isNavigationVisible) {
         hideNavigation();
     }
@@ -43,11 +42,11 @@ function showNavigation() {
 
 //Hide the navigation bar
 function hideNavigation() {
-    $("#search-nav").animate({
+    /*$("#search-nav").animate({
         height: 0,
     }, 500);
     setTimeout(function() {
         $("#search-nav").hide();
     }, 500);
-    isNavigationVisible = false;
+    isNavigationVisible = false;*/
 };

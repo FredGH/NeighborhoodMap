@@ -11,11 +11,13 @@ body {
     color: darkgrey;
 }
 
-html, body, #googlemap-canvas {
+html,
+body,
+#googlemap-canvas {
     width: 100%;
     height: 100%;
     z-index: 1;
-    position: absolute;
+    position:  absolute;
     margin: 0;
 }
 
@@ -76,7 +78,7 @@ hr {
 #wikki-container {
     position: absolute;
     z-index: 2;
-    left: 0px;
+    left: 0%;
     top: 700px;
     width:100%;
     background-color: rgba(256,256,256,.9);
@@ -87,13 +89,38 @@ hr {
 #nytimes-container {
     position: absolute;
     z-index: 1;
-    left: 0px;
+    left: 0%;
     top: 700px;
     width:95%;
     background-color: rgba(256,256,256,.9);
     border-top: solid 2px mediumseagreen;
     border-left: solid 2px mediumseagreen;
     overflow: auto;
+}
+
+@media screen and (max-width: 900px) {
+
+    #wikki-container {
+        position: absolute;
+        z-index: 2;
+        left: 0%;
+        top: 700px;
+        width:100%;
+        background: rgba(256,256,256,.9);
+        border: solid 2px mediumseagreen;
+        overflow: inherit;
+    }
+
+    #nytimes-container {
+        position: absolute;
+        z-index: 1;
+        left: 0%;
+        top: 1400px;
+        width:100%;
+        background-color: rgba(256,256,256,.9);
+        border: solid 2px mediumseagreen;
+        overflow: auto;
+    }
 }
 
 #search-nav {

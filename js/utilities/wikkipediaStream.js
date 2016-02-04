@@ -17,7 +17,7 @@ function getWikkiInfo(cityStr) {
         dataType: "jsonp", //has notgot the concept of error handling=>tech limitation
         success: function(response) {
             var articleList = response[1];
-            for (var i = 0; i < articleList.length; i++) {
+            for (var i = 0, len =  articleList.length;  i < len  ; i++) {
                 articleStr = articleList[i];
                 var url = 'http://en.wikipedia.org/wiki/' + articleStr;
                 $wikiElem.append('<li><a href="' + url + '">' + articleStr + '</a></li>');
@@ -28,4 +28,6 @@ function getWikkiInfo(cityStr) {
             clearTimeout(wikiRequestTimeOut);
         }
     });
-};
+}
+
+ko.applyBindings( new getWikkiInfo(viewModel.markersModel.borough));

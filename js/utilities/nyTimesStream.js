@@ -12,7 +12,7 @@ function getNyTimesInfo(cityStr) {
     $.getJSON(nytimesUrl, function(data) {
         $nytHeaderElem.text('New York Times Articles About ' + cityStr);
         articles = data.response.docs;
-        for (var i = 0; i < articles.length; i++) {
+        for (var i = 0, len = articles.length; i < len; i++) {
             var article = articles[i];
 
             $nytElem.append('<li class="article">' +
@@ -25,4 +25,6 @@ function getNyTimesInfo(cityStr) {
     }).error(function(e) {
         $nytHeaderElem.text('New York Times Articles Could Not Be Loaded for ' + cityStr + '.');
     });
-};
+}
+
+ko.applyBindings( new getNyTimesInfo(viewModel.markersModel.city));
