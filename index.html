@@ -19,6 +19,7 @@
     <div class="row">
         <div class="col-md-6">
             <div id="wikki-container">
+
                 <div class="">
                     <h3 id="wikipedia-header">Relevant Wikipedia Links</h3>
                     <ul id="wikipedia-links"><li>Relevant Wikipedia articles for the selected address</li></ul>
@@ -40,10 +41,10 @@
                 <div id="search-nav">
                     <input id="input" placeholder="Search…" data-bind="textInput: query, valueUpdate: 'keydown'" autocomplete="off">
                         <div id="scroller">
-                        <ul data-bind="template: {name: 'marker', foreach:markersModel}"></ul>
-                        <script type="text/html" id="marker">
+                            <ul data-bind="template: {name: 'marker', foreach:markersModel}, click:loadArticles"></ul>
+                            <script type="text/html" id="marker">
                             <div data-bind="visible: visible">
-                                <a href="#" data-bind="attr: {id: id}">
+                                    <a href="#" data-bind="attr: {id: id}">
                                     <li>
                                         <strong data-bind="text: name"></strong>
                                         <p data-bind="text: firstLineOfAddress"></p>
@@ -67,5 +68,7 @@
 <script async src="js/utilities/googleMapGenerator.js"></script>
 <script async src="js/utilities/wikkipediaStream.js"></script>
 <script async src="js/utilities/nyTimesStream.js"></script>
+
+
 </body>
 </html>
