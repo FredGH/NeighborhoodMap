@@ -7,9 +7,10 @@ markersModel = [{
     firstLineOfAddress: "14 Burnt Ash Rd",
     postCode: "SE12 8PZ",
     borough:  "Lewisham",
-    city:  "Paris",
+    city:  "London",
     url: "www.stores.sainsburys.co.uk/detail.html#11",
     id: "nav0",
+    test: 0,
     visible: ko.observable(true)
 }, {
     name: "Leegate Pharmacy",
@@ -21,6 +22,7 @@ markersModel = [{
     borough:  "Lewisham",
     url: "www.leegatepharmacy.co.uk",
     id: "nav1",
+    test: 1,
     visible: ko.observable(true)
 }, {
     name: "Luciano's London",
@@ -32,6 +34,7 @@ markersModel = [{
     borough:  "Lewisham",
     url: "www.lucianoslondon.co.uk",
     id: "nav2",
+    test: 2,
     visible: ko.observable(true)
 }, {
     name: "Caspian Restaurant",
@@ -43,6 +46,7 @@ markersModel = [{
     borough:  "Lewisham",
     url: "www.thecaspian.co.uk",
     id: "nav3",
+    test: 3,
     visible: ko.observable(true)
 }, {
     name: "The Curry World",
@@ -54,6 +58,7 @@ markersModel = [{
     borough:  "Lewisham",
     url: "www.curryworldindian.com",
     id: "nav4",
+    test: 4,
     visible: ko.observable(true)
 }, {
     name: "The Curry Garden",
@@ -65,5 +70,6 @@ markersModel = [{
     borough:  "Lewisham",
     url: "Not Available",
     id: "nav5",
+    test: 5,
     visible: ko.observable(true)
 }];

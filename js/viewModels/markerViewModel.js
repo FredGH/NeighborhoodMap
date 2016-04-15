@@ -11,14 +11,22 @@ viewModel.markersModel = ko.dependentObservable(function() {
         loadArticles(infowindow.location);
     };
 
-    return ko.utils.arrayFilter(markersModel, function(marker) {
-        if (marker.name.toLowerCase().indexOf(search) >= 0) {
-            return marker.visible(true);
-        } else {
-            setAllMap();
-            return marker.visible(false);
-        }
+    self.toggleBounce = function(index)
+    {
+        toggleBounce(markersModel[index].holdMarker);
+    };
 
+    return ko.utils.arrayFilter(markersModel, function(marker) {
+
+        if (marker!== null) {
+            if (marker.name.toLowerCase().indexOf(search) >= 0) {
+                return marker.visible(true);
+
+            } else {
+                setAllMap();
+                return marker.constructor(false);
+            }
+        }
 
     });
 }, viewModel);

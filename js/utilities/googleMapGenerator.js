@@ -52,7 +52,7 @@ function initialise() {
 //Set the markers visibility
 function setAllMap() {
     for (var i = 0; i < markersModel.length; i++) {
-        var marker = markersModel[i];
+        marker = markersModel[i];
         marker.holdMarker.setMap(map);
     }
 }
@@ -83,6 +83,7 @@ function setMarkers(location) {
         content: ""
     });
 
+
     for (i = 0; i < location.length; i++) {
         location[i].holdMarker = new google.maps.Marker({
             position: new google.maps.LatLng(location[i].lat, location[i].lng),
@@ -95,7 +96,7 @@ function setMarkers(location) {
                 anchor: new google.maps.Point(12.5, 40)
             },
             shape: {
-                coords: [1, 25, -40, -25, 1],
+                coords: [1, 250, -40, -25, 1],
                 type: 'poly'
             }
         });
@@ -110,9 +111,6 @@ function setMarkers(location) {
             location[i].firstLineOfAddress + '<br>' + location[i].postCode + '<br>' +
             location[i].city + '<br></p><a class="web-links" href="http://' + location[i].url +
             '" target="_blank">' + location[i].url + '</a>';
-
-        infowindow.content =  markersModel[i].contentString;
-        infowindow.location = location;
 
         //Click marker to view infoWindow and zoom if need be...
         new google.maps.event.addListener(location[i].holdMarker, 'click', (function(marker, i) {
@@ -145,8 +143,9 @@ function setMarkers(location) {
                 map.setZoom(16);
                 map.setCenter(marker.getPosition());
 
+
                 //get the info from the different ajax calls
-                getArticlesInformation(location[i]);
+                loadArticles(location[i]);
 
             };
         })(location[i].holdMarker, i));

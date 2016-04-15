@@ -1,8 +1,8 @@
 //global variable that sets the navigation bar to visible
-var isNavigationVisible = true;
+/*var isNavigationVisible = true;*/
 
 //Hide/Show the navigation bar depending on defined thresholds
-$(window).resize(function() {
+/*$(window).resize(function() {
     var windowWidth = $(window).width();
     var windowHeight = $(window).height();
     if (windowWidth < 800 && isNavigationVisible) {hideNavigation();
@@ -18,10 +18,10 @@ $(window).resize(function() {
             showNavigation();
         }
     }
-});
+});*/
 
 //Shows the navigation bar
-function showNavigation() {
+/*function showNavigation() {
     $("#search-nav").show();
     var scrollerHeight = $("#scroller").height() + 55;
     if ($(window).height() < 600) {
@@ -38,15 +38,15 @@ function showNavigation() {
         });
     }
     isNavigationVisible = true;
-};
+};*/
 
 //Hide the navigation bar
-function hideNavigation() {
-    /*$("#search-nav").animate({
+/*function hideNavigation() {
+    $("#search-nav").animate({
         height: 0,
     }, 500);
     setTimeout(function() {
         $("#search-nav").hide();
     }, 500);
-    isNavigationVisible = false;*/
-};
+    isNavigationVisible = false;
+};*/

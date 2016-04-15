@@ -5,7 +5,6 @@ function getNyTimesInfo(cityStr) {
     // clear out old data before new request
     $nytElem.text("");
 
-    //cityStr = 'Paris';
     var nytimesUrl = 'http://api.nytimes.com/svc/search/v2/articlesearch.json?fq=' + cityStr + '&a&api-key=2dec600b8ccf67fccbc599f9a748e55e:2:73444575'
 
     //this anonymous function will get run as soon as we get an answer back the NYT
