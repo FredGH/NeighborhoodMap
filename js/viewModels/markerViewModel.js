@@ -1,5 +1,6 @@
 var viewModel = {
     query: ko.observable(''),
+
 };
 
 viewModel.markersModel = ko.dependentObservable(function() {

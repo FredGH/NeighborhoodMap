@@ -39,9 +39,9 @@ function initialise() {
     if ($(window).width() <= 1080) {
         mapOptions.zoom = 13;
     }
-    if ($(window).width() < 850 || $(window).height() < 595) {
+    /*if ($(window).width() < 850 || $(window).height() < 595) {
         hideNavigation();
-    }
+    }*/
 
     map = new google.maps.Map(document.getElementById('googlemap-canvas'), mapOptions);
 

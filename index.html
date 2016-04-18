@@ -10,18 +10,29 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
 <body>
 <div>
     <div id="googlemap-canvas"></div>
 </div>
 <div class="container-fluid">
+
     <div class="row">
         <div class="col-md-6">
             <div id="wikki-container">
-                <div class="">
-                    <h3 id="wikipedia-header">Relevant Wikipedia Links</h3>
-                    <ul id="wikipedia-links"><li>Relevant Wikipedia articles for the selected address</li></ul>
+                <!-- Trigger the modal with a button -->
+                <div class="wikki-container">
+                    <h3 id="wikipedia-header">Wikipedia Links</h3>
+                    <ul id="wikipedia-links"></ul>
+                    <ul data-bind="template: {name: 'wikkipediaArray', foreach:wikkipediaArrayModel}"></ul>
+                    <script type="text/html" id="wikkipediaArray">
+                        <div data-bind="visible: visible">
+                            <li>
+                                <a data-bind="attr: { href: url}"><p data-bind="text: content"></p></a>
+                            </li>
+                        </div>
+                    </script>
                 </div>
             </div>
         </div>
@@ -32,7 +43,15 @@
             <div id="nytimes-container">
                 <div class="nytimes-container">
                         <h3 id="nytimes-header">New York Times Articles</h3>
-                        <ul id="nytimes-articles" class="article-list"><li>Relevant articles for the selected address</li></ul>
+                        <ul id="nytimes-articles" class="article-list"></ul>
+                        <ul data-bind="template: {name: 'nyTimesArray', foreach:nyTimesArrayModel}"></ul>
+                        <script type="text/html" id="nyTimesArray">
+                            <div data-bind="visible: visible">
+                                <li>
+                                    <a data-bind="attr: { href: url}"><p data-bind="text: content"></p></a>
+                                </li>
+                            </div>
+                    </script>
                  </div>
             </div>
         </div>
@@ -48,9 +67,12 @@
                                         <a href="#" data-bind="attr: {id: id}">
                                         <li>
                                             <strong data-bind="text: name"></strong>
-                                            <p data-bind="text: firstLineOfAddress"></p>
-                                            <p data-bind="text: postCode"></p>
-                                            <p data-bind="text: city"></p>
+                                            <ul>
+                                                <li data-bind="text: firstLineOfAddress"></li>
+                                                <li data-bind="text: postCode"></li>
+                                                <li data-bind="text: city"></li>
+                                                <p></p>
+                                            </ul>
                                         </li>
                                     </a>
                                 </div>
@@ -65,6 +87,8 @@
 <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
 <script src="js/lib/knockout-3.3.0.js"></script>
 <script async src="js/models/markersModel.js"></script>
+<script async src="js/models/articleModel.js"></script>
+<script async src="js/models/articleModelCollection.js"></script>
 <script async src="js/utilities/windowResizing.js"></script>
 <script async src="js/utilities/googleMapGenerator.js"></script>
 <script async src="js/utilities/wikkipediaStream.js"></script>

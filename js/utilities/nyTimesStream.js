@@ -1,29 +1,43 @@
 function getNyTimesInfo(cityStr) {
-    var $nytHeaderElem = $('#nytimes-header');
-    var $nytElem = $('#nytimes-articles');
-
-    // clear out old data before new request
-    $nytElem.text("");
 
     var nytimesUrl = 'http://api.nytimes.com/svc/search/v2/articlesearch.json?fq=' + cityStr + '&a&api-key=2dec600b8ccf67fccbc599f9a748e55e:2:73444575'
 
+    //this is a hack to workaround the tech limitation of lack of error handling
+    //we start a timer that will stop 8000ms later
+    var nyTimesRequestTimeOut = setTimeout(function() {
+        var content = "Failed to get nyTimes  resources for " + cityStr + ".";
+        WikkiError(content,e);
+    }, 9000);
+
     //this anonymous function will get run as soon as we get an answer back the NYT
     $.getJSON(nytimesUrl, function(data) {
-        $nytHeaderElem.text('New York Times Articles About ' + cityStr);
+
         articles = data.response.docs;
         for (var i = 0, len = articles.length; i < len; i++) {
             var article = articles[i];
 
-            $nytElem.append('<li class="article">' +
-                '<a href ="' + article.web_url + '">' + article.headline.main +
-                '</a>' +
-                '<p>' + article.snippet + '<p>' +
-                '</li>');
+            //push data url and content to the models
+            articleModel.id = "nyTimes" + i;
+            articleModel.url = article.web_url;
+            articleModel.content = article.snippet;
+            articleModel.visible = true;
+            nyTimesArrayModel.push(articleModel);
+
         };
+
+        //stop the timeout for happening....Else it would happen at all time,
+        // even when the timeout is not passed
+        clearTimeout(nyTimesRequestTimeOut);
+
         //chaining the error => i.e. adding a method to another method
     }).error(function(e) {
-        $nytHeaderElem.text('New York Times Articles Could Not Be Loaded for ' + cityStr + '.');
+
+        articleModel.id = "nyTimes" + 0 ;
+        articleModel.url = '';
+        articleModel.content = 'Ny Times Articles Could Not Be Loaded for ' + cityStr + '. Err Msg' + e.message;
+        articleModel.visible = true;
+        wikkipediaArrayModel.push(articleModel);
     });
 }
 
-ko.applyBindings( new getNyTimesInfo(viewModel.markersModel.city));
+//ko.applyBindings( new getNyTimesInfo(viewModel.markersModel.city));

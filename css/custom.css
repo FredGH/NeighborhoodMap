@@ -21,14 +21,23 @@ body,
     margin: 0;
 }
 
+p{
+    color: black;
+}
+
+
+a:focus, a:hover{
+    color: mediumseagreen;
+}
+
 p {
     font-size: 12px;
-    margin: 5px 0;
 }
 
 strong {
     font-size: 14px;
 }
+
 
 ul {
     list-style-type: none;
@@ -36,23 +45,18 @@ ul {
     margin-bottom: 0;
 }
 
-li {
-    font-family: Helvetica, sans-serif;
-    padding: 20px 0 15px 15px;
+li{
+    font-size: 12px;
+    color: black;
 }
+
 
 li:hover {
     background-color: mediumseagreen;
     color: white;
 }
 
-a {
-    text-decoration: none;
-    color: mediumseagreen;
-}
-
 hr {
-    margin: 10px 0 0 0;
     color: mediumseagreen;
     border-color: mediumseagreen;
 }
@@ -130,7 +134,7 @@ hr {
         top: 590px;
         left: 10px;
         width: 200px;
-        height: 100px;
+        height:100px;
         padding-left: 5px;
         z-index: 1;
         font-family: helvetica, sans-serif;
@@ -167,18 +171,18 @@ hr {
 }
 
 .web-links {
-    color: blue;
+    color: mediumseagreen;
 }
 
 .web-links:visited {
-    color: blue;
+    color: mediumseagreen;
 }
 
 .modal {
     position: absolute;
     height: 100%; 
     width: 100%;
-    background-color: rgba(0, 0, 0, .3);
+    background-color: mediumseagreen;
     z-index: 0;
     display: none;
 }
@@ -201,8 +205,6 @@ hr {
     width: 10%;
     border-radius: 50%;
 }
-
-
 
 /* Box styles */
 .myBox {
