@@ -6,7 +6,7 @@ function getNyTimesInfo(cityStr) {
     //we start a timer that will stop 8000ms later
     var nyTimesRequestTimeOut = setTimeout(function() {
         var content = "Failed to get nyTimes  resources for " + cityStr + ".";
-        WikkiError(content,e);
+        Error(content,e);
     }, 9000);
 
     //this anonymous function will get run as soon as we get an answer back the NYT
@@ -22,7 +22,6 @@ function getNyTimesInfo(cityStr) {
             articleModel.content = article.snippet;
             articleModel.visible = true;
             nyTimesArrayModel.push(articleModel);
-
         };
 
         //stop the timeout for happening....Else it would happen at all time,
@@ -31,13 +30,16 @@ function getNyTimesInfo(cityStr) {
 
         //chaining the error => i.e. adding a method to another method
     }).error(function(e) {
-
-        articleModel.id = "nyTimes" + 0 ;
-        articleModel.url = '';
-        articleModel.content = 'Ny Times Articles Could Not Be Loaded for ' + cityStr + '. Err Msg' + e.message;
-        articleModel.visible = true;
-        wikkipediaArrayModel.push(articleModel);
+        var content = 'Ny Times Articles Could Not Be Loaded for ' + cityStr + '.' + 'Err Msg' + e.message;
+        Error(content,e);
     });
 }
 
-//ko.applyBindings( new getNyTimesInfo(viewModel.markersModel.city));
+function Error(content) {
+    articleModel.id = "wikkepedia" + 0 ;
+    articleModel.url = '';
+    articleModel.content = content;
+    articleModel.visible = true;
+    nyTimesArrayModel.push(articleModel);
+};
+

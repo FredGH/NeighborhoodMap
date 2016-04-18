@@ -7,7 +7,7 @@ function getWikkiInfo(cityStr) {
     //we start a timer that will stop 8000ms later
     var wikiRequestTimeOut = setTimeout(function() {
         var content = "Failed to get wikipedia resources for " + cityStr + ".";
-        WikkiError(content,e);
+        Error(content,e);
     }, 9000);
 
     $.ajax(wikiUrl, {
@@ -30,15 +30,13 @@ function getWikkiInfo(cityStr) {
             clearTimeout(wikiRequestTimeOut);
         }
     }).error(function(e) {
-
         var content = 'Wikkipedia Articles Could Not Be Loaded for ' + cityStr + '.' + 'Err Msg' + e.message;
-        WikkiError(content,e);
+        Error(content,e);
     });
 }
 
-function WikkiError(content) {
-
-   articleModel.id = "wikkepedia" + 0 ;
+function Error(content) {
+    articleModel.id = "wikkepedia" + 0 ;
     articleModel.url = '';
     articleModel.content = content;
     articleModel.visible = true;
