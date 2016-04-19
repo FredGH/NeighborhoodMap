@@ -8,9 +8,8 @@ viewModel.markersModel = ko.dependentObservable(function() {
 
     //Open Url in new Window
     self.openInNewTab = function(data, event) {
-
-    var win = window.open(data.url, '_blank');
-    win.focus();
+        var win = window.open(data.url, '_blank');
+        win.focus();
     };
 
     //Load articles
@@ -20,17 +19,20 @@ viewModel.markersModel = ko.dependentObservable(function() {
     };
 
     //Populate infoWindow with clicked navigation item's address
-    self.displaySignPostAndToggleBounce = function(marker) {
+    self.markerActions = function(marker) {
 
+        //1.Toggle the marker
         self.toggleBounce(marker);
 
+        //2.Display data in a window
         if (typeof(infowindow) !== 'undefined') {
             infowindow.close();
         }
         infowindow.setContent(marker.contentString);
         infowindow.open(map, marker.holdMarker);
-        //get the info from the different ajax calls
-        self.loadArticles(marker);  
+
+        //3. Load the articles
+        self.loadArticles(marker);
     };
 
     //Toggle the marker
@@ -38,7 +40,9 @@ viewModel.markersModel = ko.dependentObservable(function() {
         toggleBounce(marker.holdMarker);
     };
 
-    return ko.utils.arrayFilter(markersModel, function(marker) {
+    //Filter locations
+    self.filter = function(marker)
+    {
         //case 1: The user empty the search bar
         if (search === "") {
             return marker.visible(true);
@@ -51,6 +55,11 @@ viewModel.markersModel = ko.dependentObservable(function() {
             //case 3: There is no match reset visibility to false
             return marker.visible(false);
         }
+    };
+
+    //Filter locations based on user input
+    return ko.utils.arrayFilter(markersModel, function(marker) {
+        return  self.filter(marker);
     });
 }, viewModel);
 

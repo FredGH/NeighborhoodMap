@@ -59,7 +59,7 @@
                             <ul data-bind="template: {name: 'marker', foreach:markersModel}, click:viewModel.loadArticles"></ul>
                             <script type="text/html" id="marker">
                             <div data-bind="visible: visible">
-                                    <a href="#" data-bind="attr: {id: id}, click:viewModel.displaySignPostAndToggleBounce">
+                                    <a href="#" data-bind="attr: {id: id}, click:viewModel.markerActions">
                                     <li>
                                         <strong data-bind="text: name"></strong>
                                         <ul>

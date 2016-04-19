@@ -94,17 +94,7 @@ function setMarkers(location) {
         //Click marker to view infoWindow and zoom if need be...
         new google.maps.event.addListener(location[i].holdMarker, 'click', (function(marker, i) {
             return function() {
-
-                toggleBounce(marker);
-
-                infowindow.setContent(location[i].contentString);
-                infowindow.open(map, this);
-                map.setZoom(16);
-                //map.setCenter(marker.getPosition());
-
-                //get the info from the different ajax calls
-                getArticlesInformation(location[i]);
-
+                viewModel.markerActions(location[i]);
             };
         })(location[i].holdMarker, i));
     }
