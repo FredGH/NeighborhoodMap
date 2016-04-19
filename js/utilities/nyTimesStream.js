@@ -43,4 +43,3 @@ function Error(content) {
     articleModel.visible = true;
     nyTimesArrayModel.push(articleModel);
 };
-

@@ -1,5 +1,4 @@
 //local variables
-var map;
 var headingImageView = [5, 235, 55, 170, 190, 240, -10, 10, 190];
 var streetViewImage;
 var streetViewUrl = 'https://maps.googleapis.com/maps/api/streetview?size=180x90&location=';
@@ -36,14 +35,11 @@ function initialise() {
         center: new google.maps.LatLng(51.454930, 0.007821)
     };
 
-    if ($(window).width() <= 1080) {
-        mapOptions.zoom = 13;
-    }
-    /*if ($(window).width() < 850 || $(window).height() < 595) {
-        hideNavigation();
-    }*/
-
+    //make these variables global...
     map = new google.maps.Map(document.getElementById('googlemap-canvas'), mapOptions);
+    infowindow = new google.maps.InfoWindow({
+        content: ""
+    });
 
     setMarkers(markersModel);
     setAllMap();
@@ -79,9 +75,6 @@ function toggleBounce(marker) {
 //Sets infoWindows for each marker
 function setMarkers(location) {
 
-    infowindow = new google.maps.InfoWindow({
-        content: ""
-    });
 
     for (i = 0; i < location.length; i++) {
         location[i].holdMarker = new google.maps.Marker({
@@ -109,13 +102,8 @@ function setMarkers(location) {
 
                 infowindow.setContent(location[i].contentString);
                 infowindow.open(map, this);
-                var windowWidth = $(window).width();
-                if (windowWidth <= 1080) {
-                    map.setZoom(14);
-                } else if (windowWidth > 1080) {
-                    map.setZoom(16);
-                }
-                map.setCenter(marker.getPosition());
+                map.setZoom(16);
+                //map.setCenter(marker.getPosition());
 
                 //get the info from the different ajax calls
                 getArticlesInformation(location[i]);
@@ -123,24 +111,5 @@ function setMarkers(location) {
             };
         })(location[i].holdMarker, i));
 
-        //Populate infoWindow with clicked navigation item's address
-        var searchNav = $('#nav' + i);
-        searchNav.click((function(marker, i) {
-            return function() {
-                infowindow.setContent(location[i].contentString);
-                infowindow.open(map, marker);
-                map.setZoom(16);
-                map.setCenter(marker.getPosition());
-
-
-                //get the info from the different ajax calls
-                viewModel.loadArticles(location[i]);
-
-            };
-        })(location[i].holdMarker, i));
     }
 }
-
-
-
-

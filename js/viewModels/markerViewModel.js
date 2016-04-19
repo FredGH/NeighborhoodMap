@@ -19,6 +19,20 @@ viewModel.markersModel = ko.dependentObservable(function() {
         getWikkiInfo(marker);
     };
 
+    //Populate infoWindow with clicked navigation item's address
+    self.searchNav = function(marker) {
+
+        if (typeof(infowindow1) !== 'undefined') {
+            infowindow1.close();
+        }
+
+        infowindow.setContent(marker.contentString);
+        infowindow.open(map, marker.holdMarker);
+        //get the info from the different ajax calls
+        self.loadArticles(marker);
+
+    };
+
     //Toggle the marker
     self.toggleBounce = function(index)
     {
@@ -27,14 +41,18 @@ viewModel.markersModel = ko.dependentObservable(function() {
 
     return ko.utils.arrayFilter(markersModel, function(marker) {
 
-        if (marker!== null) {
-            if (marker.name.toLowerCase().indexOf(search) >= 0) {
-                return marker.visible(true);
+        //case 1: The user empty the search bar
+        if (search === "") {
+            return marker.visible(true);
+        }
 
-            } else {
-                setAllMap();
-                return marker.constructor(false);
-            }
+        //case 2: There is 'search' match, only show the items that matches the marker's name
+        if (typeof(marker.holdMarker) !== 'undefined' && marker.name.toLowerCase().indexOf(search) >= 0 ) {
+            return marker.holdMarker.visible = true;
+
+        } else {
+            //case 3: There is no match reset visibility to false
+            return marker.visible(false);
         }
 
     });

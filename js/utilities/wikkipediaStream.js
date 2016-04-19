@@ -43,6 +43,3 @@ function Error(content) {
     articleModel.visible = true;
     wikkipediaArrayModel.push(articleModel);
 };
-
-
-//ko.applyBindings( new getWikkiInfo(viewModel.markersModel.borough));

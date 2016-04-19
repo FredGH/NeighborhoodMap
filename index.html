@@ -12,7 +12,6 @@
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </head>
 <body>
-
 <div id="googlemap-canvas"></div>
 <div class="container-fluid">
     <div class="row">
@@ -60,7 +59,7 @@
                             <ul data-bind="template: {name: 'marker', foreach:markersModel}, click:viewModel.loadArticles, click:toggleBounce.bind($data,0)"></ul>
                             <script type="text/html" id="marker">
                             <div data-bind="visible: visible">
-                                    <a href="#" data-bind="attr: {id: id}">
+                                    <a href="#" data-bind="attr: {id: id},click:viewModel.searchNav">
                                     <li>
                                         <strong data-bind="text: name"></strong>
                                         <ul>
@@ -89,6 +88,5 @@
 <script async src="js/utilities/wikkipediaStream.js"></script>
 <script async src="js/utilities/nyTimesStream.js"></script>
 <script async src="js/viewModels/markerViewModel.js"></script>
-
 </body>
 </html>
