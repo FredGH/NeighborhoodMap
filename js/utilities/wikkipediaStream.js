@@ -1,12 +1,13 @@
-function getWikkiInfo(cityStr) {
+function getWikkiInfo(marker) {
 
+    boroughStr = marker.borough;
     var wikiUrl = 'http://en.wikipedia.org/w/api.php?action=opensearch&search=' +
         cityStr + '&format=json&callback=wikiCallbkack';
 
     //this is a hack to workaround the tech limitation of lack of error handling
     //we start a timer that will stop 8000ms later
     var wikiRequestTimeOut = setTimeout(function() {
-        var content = "Failed to get wikipedia resources for " + cityStr + ".";
+        var content = "Failed to get wikipedia resources for " + boroughStr + ".";
         Error(content,e);
     }, 9000);
 
@@ -31,7 +32,7 @@ function getWikkiInfo(cityStr) {
         }
     }).error(function(e) {
         var content = 'Wikkipedia Articles Could Not Be Loaded for ' + cityStr + '.' + 'Err Msg' + e.message;
-        Error(content,e);
+       Error(content,e);
     });
 }
 

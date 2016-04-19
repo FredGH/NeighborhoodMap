@@ -1,12 +1,13 @@
-function getNyTimesInfo(cityStr) {
+function getNyTimesInfo(marker) {
 
+    cityStr = marker.city;
     var nytimesUrl = 'http://api.nytimes.com/svc/search/v2/articlesearch.json?fq=' + cityStr + '&a&api-key=2dec600b8ccf67fccbc599f9a748e55e:2:73444575'
 
     //this is a hack to workaround the tech limitation of lack of error handling
     //we start a timer that will stop 8000ms later
     var nyTimesRequestTimeOut = setTimeout(function() {
         var content = "Failed to get nyTimes  resources for " + cityStr + ".";
-        Error(content,e);
+       Error(content,e);
     }, 9000);
 
     //this anonymous function will get run as soon as we get an answer back the NYT

@@ -6,4 +6,18 @@ articleModel = [{
     visible: ko.observable(false)
 }];
 
+/*wikkipediaModel = [{
+    id:"",
+    url: "",
+    content: "",
+    visible: ko.observable(false)
+}];
+
+nyTimesModel =  [{
+    id:"",
+    url: "",
+    content: "",
+    visible: ko.observable(false)
+}];*/
+
 

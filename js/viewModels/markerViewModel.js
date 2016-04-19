@@ -1,17 +1,25 @@
 var viewModel = {
     query: ko.observable(''),
-
 };
 
 viewModel.markersModel = ko.dependentObservable(function() {
     var self = this;
     var search = self.query().toLowerCase();
 
-    self.loadArticles = function ()
-    {
-        loadArticles(infowindow.location);
+    //Open Url in new Window
+    self.openInNewTab = function(data, event) {
+
+        var win = window.open(data.url, '_blank');
+        win.focus();
     };
 
+    //Load articles
+    self.loadArticles = function(marker) {
+        getNyTimesInfo(marker);
+        getWikkiInfo(marker);
+    };
+
+    //Toggle the marker
     self.toggleBounce = function(index)
     {
         toggleBounce(markersModel[index].holdMarker);

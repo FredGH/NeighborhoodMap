@@ -83,22 +83,11 @@ function setMarkers(location) {
         content: ""
     });
 
-
     for (i = 0; i < location.length; i++) {
         location[i].holdMarker = new google.maps.Marker({
             position: new google.maps.LatLng(location[i].lat, location[i].lng),
             map: map,
-            name: location[i].name,
-            icon: {
-                url: 'img/marker.png',
-                size: new google.maps.Size(25, 40),
-                origin: new google.maps.Point(0, 0),
-                anchor: new google.maps.Point(12.5, 40)
-            },
-            shape: {
-                coords: [1, 250, -40, -25, 1],
-                type: 'poly'
-            }
+            name: location[i].name
         });
 
         //Set google street view images within info windows
@@ -145,19 +134,13 @@ function setMarkers(location) {
 
 
                 //get the info from the different ajax calls
-                loadArticles(location[i]);
+                viewModel.loadArticles(location[i]);
 
             };
         })(location[i].holdMarker, i));
     }
 }
 
-//Wrapper function that contains all the ajax call to get articles on the map
-function loadArticles(location) {
-    //get the info from the different ajax calls
-    getNyTimesInfo(location.city);
-    getWikkiInfo(location.borough);
 
-}
 
 

@@ -10,26 +10,22 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
 <body>
-<div>
-    <div id="googlemap-canvas"></div>
-</div>
-<div class="container-fluid">
 
+<div id="googlemap-canvas"></div>
+<div class="container-fluid">
     <div class="row">
         <div class="col-md-6">
             <div id="wikki-container">
                 <!-- Trigger the modal with a button -->
                 <div class="wikki-container">
                     <h3 id="wikipedia-header">Wikipedia Links</h3>
-                    <ul id="wikipedia-links"></ul>
                     <ul data-bind="template: {name: 'wikkipediaArray', foreach:wikkipediaArrayModel}"></ul>
                     <script type="text/html" id="wikkipediaArray">
                         <div data-bind="visible: visible">
                             <li>
-                                <a data-bind="attr: { href: url}"><p data-bind="text: content"></p></a>
+                                <a data-bind="click: viewModel.openInNewTab"><p data-bind="text: content"></p></a>
                             </li>
                         </div>
                     </script>
@@ -43,41 +39,40 @@
             <div id="nytimes-container">
                 <div class="nytimes-container">
                         <h3 id="nytimes-header">New York Times Articles</h3>
-                        <ul id="nytimes-articles" class="article-list"></ul>
                         <ul data-bind="template: {name: 'nyTimesArray', foreach:nyTimesArrayModel}"></ul>
                         <script type="text/html" id="nyTimesArray">
                             <div data-bind="visible: visible">
                                 <li>
-                                    <a data-bind="attr: { href: url}"><p data-bind="text: content"></p></a>
+                                    <a data-bind="click: viewModel.openInNewTab"><p data-bind="text: content"></p></a>
                                 </li>
                             </div>
                     </script>
                  </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-12">
-                <div id="search-container">
-                    <div id="search-nav">
-                        <input id="input" placeholder="Search…" data-bind="textInput: query, valueUpdate: 'keydown'" autocomplete="off">
-                            <div id="scroller">
-                                <ul data-bind="template: {name: 'marker', foreach:markersModel}, click:loadArticles, click:toggleBounce.bind($data,0)"></ul>
-                                <script type="text/html" id="marker">
-                                <div data-bind="visible: visible">
-                                        <a href="#" data-bind="attr: {id: id}">
-                                        <li>
-                                            <strong data-bind="text: name"></strong>
-                                            <ul>
-                                                <li data-bind="text: firstLineOfAddress"></li>
-                                                <li data-bind="text: postCode"></li>
-                                                <li data-bind="text: city"></li>
-                                                <p></p>
-                                            </ul>
-                                        </li>
-                                    </a>
-                                </div>
-                            </script>
-                        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div id="search-container">
+                <div id="search-nav">
+                    <input id="input" placeholder="Search…" data-bind="textInput: query, valueUpdate: 'keydown'" autocomplete="off">
+                        <div id="scroller">
+                            <ul data-bind="template: {name: 'marker', foreach:markersModel}, click:viewModel.loadArticles, click:toggleBounce.bind($data,0)"></ul>
+                            <script type="text/html" id="marker">
+                            <div data-bind="visible: visible">
+                                    <a href="#" data-bind="attr: {id: id}">
+                                    <li>
+                                        <strong data-bind="text: name"></strong>
+                                        <ul>
+                                            <li data-bind="text: firstLineOfAddress"></li>
+                                            <li data-bind="text: postCode"></li>
+                                            <li data-bind="text: city"></li>
+                                            <p></p>
+                                        </ul>
+                                    </li>
+                                </a>
+                            </div>
+                        </script>
                     </div>
                 </div>
             </div>
