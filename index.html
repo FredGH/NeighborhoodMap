@@ -56,10 +56,10 @@
                 <div id="search-nav">
                     <input id="input" placeholder="Search…" data-bind="textInput: query, valueUpdate: 'keydown'" autocomplete="off">
                         <div id="scroller">
-                            <ul data-bind="template: {name: 'marker', foreach:markersModel}, click:viewModel.loadArticles, click:toggleBounce.bind($data,0)"></ul>
+                            <ul data-bind="template: {name: 'marker', foreach:markersModel}, click:viewModel.loadArticles"></ul>
                             <script type="text/html" id="marker">
                             <div data-bind="visible: visible">
-                                    <a href="#" data-bind="attr: {id: id},click:viewModel.searchNav">
+                                    <a href="#" data-bind="attr: {id: id}, click:viewModel.displaySignPostAndToggleBounce">
                                     <li>
                                         <strong data-bind="text: name"></strong>
                                         <ul>

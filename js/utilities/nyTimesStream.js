@@ -1,5 +1,4 @@
 function getNyTimesInfo(marker) {
-
     cityStr = marker.city;
     var nytimesUrl = 'http://api.nytimes.com/svc/search/v2/articlesearch.json?fq=' + cityStr + '&a&api-key=2dec600b8ccf67fccbc599f9a748e55e:2:73444575'
 

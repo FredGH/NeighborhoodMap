@@ -29,7 +29,6 @@ window.onload = loadGoogleMap;
 
 //Initialise the map and its contents
 function initialise() {
-
     var mapOptions = {
         zoom: 16,
         center: new google.maps.LatLng(51.454930, 0.007821)
@@ -74,8 +73,6 @@ function toggleBounce(marker) {
 //Locates  markers on the map
 //Sets infoWindows for each marker
 function setMarkers(location) {
-
-
     for (i = 0; i < location.length; i++) {
         location[i].holdMarker = new google.maps.Marker({
             position: new google.maps.LatLng(location[i].lat, location[i].lng),
@@ -110,6 +107,5 @@ function setMarkers(location) {
 
             };
         })(location[i].holdMarker, i));
-
     }
 }

@@ -1,5 +1,4 @@
 function getWikkiInfo(marker) {
-
     boroughStr = marker.borough;
     var wikiUrl = 'http://en.wikipedia.org/w/api.php?action=opensearch&search=' +
         cityStr + '&format=json&callback=wikiCallbkack';
