@@ -12,9 +12,9 @@ Research and implement third-party APIs that provide additional information abou
 
 1. View the site by directly accessing: rawgit.com/FredGH/NeighborhoodMap/master/index.html
 2. Download the project and run it locally:
-    2.1 Go to https://github.com/FredGH/NeighborhoodMap
-    2.2 Find the 'download ZIP' button on the screen and click.
-    2.3 Once downloaded locally, please start index.html
+    - Go to https://github.com/FredGH/NeighborhoodMap
+    - Find the 'download ZIP' button on the screen and click.
+    - Once downloaded locally, please start index.html
 
 #### Usage
 
