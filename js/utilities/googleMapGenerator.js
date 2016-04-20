@@ -41,15 +41,6 @@ function initialise() {
     });
 
     setMarkers(markersModel);
-    setAllMap();
-}
-
-//Set the markers visibility
-function setAllMap() {
-    for (var i = 0; i < markersModel.length; i++) {
-        marker = markersModel[i];
-        marker.holdMarker.setMap(map);
-    }
 }
 
 //Get the street view image corresponding to marker lat/lng
@@ -72,30 +63,34 @@ function toggleBounce(marker) {
 
 //Locates  markers on the map
 //Sets infoWindows for each marker
-function setMarkers(location) {
-    for (i = 0; i < location.length; i++) {
-        location[i].holdMarker = new google.maps.Marker({
-            position: new google.maps.LatLng(location[i].lat, location[i].lng),
+function setMarkers(mm) {
+    for (i = 0; i < mm.length; i++) {
+        mm[i].holdMarker = new google.maps.Marker({
+            position: new google.maps.LatLng(mm[i].lat, mm[i].lng),
             map: map,
-            name: location[i].name
+            name: mm[i].name
         });
 
         //Set google street view images within info windows
         getStreetViewImage(i);
 
         //Binds infoWindow content to each marker
-        location[i].contentString = '<img src="' + streetViewImage +
-            '" alt="Street View Image of ' + location[i].name + '"><br><hr style="margin-bottom: 5px"><strong>' +
-            location[i].name + '</strong><br><p>' +
-            location[i].firstLineOfAddress + '<br>' + location[i].postCode + '<br>' +
-            location[i].city + '<br></p><a class="web-links" href="http://' + location[i].url +
-            '" target="_blank">' + location[i].url + '</a>';
+        mm[i].contentString = '<img src="' + streetViewImage +
+        '" alt="Street View Image of ' + mm[i].name + '"><br><hr style="margin-bottom: 5px"><strong>' +
+            mm[i].name + '</strong><br><p>' +
+            mm[i].firstLineOfAddress + '<br>' + mm[i].postCode + '<br>' +
+            mm[i].city + '<br></p><a class="web-links" href="http://' + mm[i].url +
+        '" target="_blank">' + mm[i].url + '</a>';
 
-        //Click marker to view infoWindow and zoom if need be...
-        new google.maps.event.addListener(location[i].holdMarker, 'click', (function(marker, i) {
+        //reset the markersModel
+        markersModel = mm;
+
+        //Click marker to view corresponding infoWindow...
+        new google.maps.event.addListener(markersModel[i].holdMarker, 'click', (function(marker, i) {
             return function() {
-                viewModel.markerActions(location[i]);
+                viewModel.markerActions(markersModel[i]);
             };
-        })(location[i].holdMarker, i));
+        })(markersModel[i].holdMarker, i));
+
     }
 }

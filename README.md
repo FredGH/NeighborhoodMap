@@ -10,9 +10,11 @@ Research and implement third-party APIs that provide additional information abou
 
 #### Access
 
-You can view the site by directly accessing:
-
-rawgit.com/FredGH/NeighborhoodMap/master/index.html
+1. View the site by directly accessing: rawgit.com/FredGH/NeighborhoodMap/master/index.html
+2. Download the project and run it locally:
+    2.1 Go to https://github.com/FredGH/NeighborhoodMap
+    2.2 Find the 'download ZIP' button on the screen and click.
+    2.3 Once downloaded locally, please start index.html
 
 #### Usage
 
@@ -22,3 +24,14 @@ rawgit.com/FredGH/NeighborhoodMap/master/index.html
 4. Click a maker, a box appears with a picture of the place and details about it
 5. Whether you choose to click a marker on the map directly or to select an item in the navigation bar, the wikki and NY news boxes will refresh with the current news
 (please note that all places are currently set to borough= Lewisham and city = London, therefore the boxes will refresh but with the same information content)
+
+### List of bug fixes 20-April-2016
+
+1. Layout modified to avoid overflow on small screen devices.
+2. Clicking a location in the list view animates it's corresponding map marker and open an infowindow displaying location details.
+3. Markers animates when they are clicked.
+4. JQuery replaced by kockout MVVM in the entire project base.
+5. Your AJAX requests are running and displaying data. The data is displayed in a separate web browser page
+5. Use of defer and Async in function loadGoogleMap()
+6. General refactoring and cleaning of the code
+
