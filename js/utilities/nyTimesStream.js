@@ -6,13 +6,14 @@ function getNyTimesInfo(marker) {
     //we start a timer that will stop 8000ms later
     var nyTimesRequestTimeOut = setTimeout(function() {
         var content = "Failed to get nyTimes  resources for " + cityStr + ".";
-       Error(content,e);
-    }, 9000);
+        ErrorNyTimes(content);
+    }, 5000);
 
     //this anonymous function will get run as soon as we get an answer back the NYT
     $.getJSON(nytimesUrl, function(data) {
 
         articles = data.response.docs;
+            nyTimesArrayModel.removeAll();
         for (var i = 0, len = articles.length; i < len; i++) {
             var article = articles[i];
 
@@ -31,11 +32,13 @@ function getNyTimesInfo(marker) {
         //chaining the error => i.e. adding a method to another method
     }).error(function(e) {
         var content = 'Ny Times Articles Could Not Be Loaded for ' + cityStr + '.' + 'Err Msg' + e.message;
-        Error(content,e);
+        ErrorNyTimes(content,e);
     });
+
+    nyTimesRequestTimeOut;
 }
 
-function Error(content) {
+function ErrorNyTimes(content) {
     articleModel.id = "wikkepedia" + 0 ;
     articleModel.url = '';
     articleModel.content = content;

@@ -12,7 +12,7 @@
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </head>
 <body>
-<div id="googlemap-canvas"></div>
+    <div id="googlemap-canvas"></div>
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-6">
@@ -20,11 +20,11 @@
                 <!-- Trigger the modal with a button -->
                 <div class="wikki-container">
                     <h3 id="wikipedia-header">Wikipedia Links</h3>
-                    <ul data-bind="template: {name: 'wikkipediaArray', foreach:wikkipediaArrayModel}"></ul>
-                    <script type="text/html" id="wikkipediaArray">
+                    <ul data-bind="template: {name: 'wikkipedia', foreach:wikkipediaArrayModel}"></ul>
+                    <script type="text/html" id="wikkipedia">
                         <div data-bind="visible: visible">
                             <li>
-                                <a data-bind="click: viewModel.openInNewTab"><p data-bind="text: content"></p></a>
+                                <a data-bind="click: function(data, event) { viewModel.openInNewTab(url, null, data, event) }"><p data-bind="text: content"></p></a>
                             </li>
                         </div>
                     </script>
@@ -38,11 +38,11 @@
             <div id="nytimes-container">
                 <div class="nytimes-container">
                         <h3 id="nytimes-header">New York Times Articles</h3>
-                        <ul data-bind="template: {name: 'nyTimesArray', foreach:nyTimesArrayModel}"></ul>
-                        <script type="text/html" id="nyTimesArray">
+                        <ul data-bind="template: {name: 'nyTimes', foreach:nyTimesArrayModel}"></ul>
+                        <script type="text/html" id="nyTimes">
                             <div data-bind="visible: visible">
                                 <li>
-                                    <a data-bind="click: viewModel.openInNewTab"><p data-bind="text: content"></p></a>
+                                    <a data-bind="click: function(data, event) { viewModel.openInNewTab(url, null, data, event)}"><p data-bind="text: content"></p></a>
                                 </li>
                             </div>
                     </script>
@@ -56,10 +56,10 @@
                 <div id="search-nav">
                     <input id="input" placeholder="Search…" data-bind="textInput: query, valueUpdate: 'keydown'" autocomplete="off">
                         <div id="scroller">
-                            <ul data-bind="template: {name: 'marker', foreach:markersModel}, click:viewModel.loadArticles"></ul>
+                            <ul data-bind="template: {name: 'marker', foreach:markersModel}"></ul>
                             <script type="text/html" id="marker">
                             <div data-bind="visible: visible">
-                                    <a href="#" data-bind="attr: {id: id}, click:viewModel.markerActions">
+                                    <a href="#" data-bind="attr: {id: id}, click:viewModel.markerActions, function (viewModel.loadArticles(marker))">
                                     <li>
                                         <strong data-bind="text: name"></strong>
                                         <ul>

@@ -7,10 +7,9 @@ viewModel.markersModel = ko.dependentObservable(function() {
     var search = self.query().toLowerCase();
 
     //Open Url in new Window
-    self.openInNewTab = function(data, event) {
-
-    var win = window.open(data.url, '_blank');
-    win.focus();
+    self.openInNewTab = function(url, event) {
+        var win = window.open(url, '_blank');
+        win.focus();
     };
 
     //Load articles
@@ -21,6 +20,13 @@ viewModel.markersModel = ko.dependentObservable(function() {
 
     //Populate infoWindow with clicked navigation item's address
     self.markerActions = function(marker) {
+
+        //remove all markers on the map that are not the selected market
+        for (var i in markersModel)
+        {
+            markersModel[i].holdMarker.setVisible(false);
+        }
+        marker.holdMarker.setVisible(true);
 
         //1.Toggle the marker
         self.toggleBounce(marker);
@@ -43,6 +49,7 @@ viewModel.markersModel = ko.dependentObservable(function() {
 
     //Filter locations based on user input
     return ko.utils.arrayFilter(markersModel, function(marker) {
+
         //case 1: The user empty the search bar
         if (search === "") {
             return marker.visible = true;

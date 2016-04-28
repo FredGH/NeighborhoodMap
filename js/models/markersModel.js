@@ -66,4 +66,26 @@ markersModel = [{
     url: "Not Available",
     id: "nav5",
     visible: ko.observable(true)
+}, {
+    name: "The Conservatoire",
+    lat: 51.4646,
+    lng: 0.0093,
+    firstLineOfAddress: "19-21 Lee Rd",
+    postCode: "SE3 9RQ",
+    city:  "London",
+    borough:  "Blackheath",
+    url: "http://www.conservatoire.org.uk/",
+    id: "nav6",
+    visible: ko.observable(true)
+}, {
+    name: "Cutty Sark",
+    lat: 51.481096,
+    lng: 0.008024,
+    firstLineOfAddress: "King William Walk",
+    postCode: "SE10 9HT",
+    city:  "London",
+    borough:  "Greenwich",
+    url: "http://www.rmg.co.uk/cutty-sark/",
+    id: "nav7",
+    visible: ko.observable(true)
 }];

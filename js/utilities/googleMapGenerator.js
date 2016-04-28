@@ -21,7 +21,6 @@ function loadGoogleMap() {
      //and that they will be executed after the document has finished parsing.
      // So, some scripts may finish downloading then sit and wait for scripts that downloaded later but appeared before them.
     script.defer = "defer"
-    script.onerror = "googleErrorFunction()"
     document.body.appendChild(script);
 }
 
@@ -50,15 +49,13 @@ function getStreetViewImage(index) {
 
 //Bound the marker when the user click it for 2s, then stop bouncing
 function toggleBounce(marker) {
-    if (marker.getAnimation() !== null) {
-        marker.setAnimation(null);
-    } else {
-        marker.setAnimation(google.maps.Animation.BOUNCE);
 
-        setTimeout(function () {
-            marker.setAnimation(null);
-        }, 2000);
-    }
+    marker.setAnimation(google.maps.Animation.BOUNCE);
+
+    //stop animation after 2s
+    setTimeout(function () {
+        marker.setAnimation(null);
+    }, 2000);
 }
 
 //Locates  markers on the map
@@ -68,8 +65,12 @@ function setMarkers(mm) {
         mm[i].holdMarker = new google.maps.Marker({
             position: new google.maps.LatLng(mm[i].lat, mm[i].lng),
             map: map,
-            name: mm[i].name
+            name: mm[i].name,
         });
+
+        //no marker is shown on init
+        mm[i].holdMarker.setVisible(false);
+        //mm[i].holdMarker.holdMarker.setVisible(false);
 
         //Set google street view images within info windows
         getStreetViewImage(i);

@@ -1,19 +1,14 @@
 function getWikkiInfo(marker) {
     boroughStr = marker.borough;
-    var wikiUrl = 'http://en.wikipedia.org/w/api.php?action=opensearch&search=' +
-        cityStr + '&format=json&callback=wikiCallbkack';
+    var boroughUrl = 'http://en.wikipedia.org/w/api.php?action=opensearch&search=' +
+        boroughStr + '&format=json&callback=wikiCallbkack';
 
-    //this is a hack to workaround the tech limitation of lack of error handling
-    //we start a timer that will stop 8000ms later
-    var wikiRequestTimeOut = setTimeout(function() {
-        var content = "Failed to get wikipedia resources for " + boroughStr + ".";
-        Error(content,e);
-    }, 9000);
-
-    $.ajax(wikiUrl, {
+    $.ajax(boroughUrl, {
         dataType: "jsonp", //has not got the concept of error handling=>tech limitation
+        timeout:  5000,
         success: function(response) {
             var articleList = response[1];
+            wikkipediaArrayModel.removeAll();
             for (var i = 0, len =  articleList.length;  i < len  ; i++) {
                 articleStr = articleList[i];
 
@@ -28,14 +23,15 @@ function getWikkiInfo(marker) {
             //stop the timeout for happening....Else it would happen at all time,
             // even when the timeout is not passed
             clearTimeout(wikiRequestTimeOut);
+
         }
     }).error(function(e) {
-        var content = 'Wikkipedia Articles Could Not Be Loaded for ' + cityStr + '.' + 'Err Msg' + e.message;
-       Error(content,e);
+        var content = 'Wikkipedia Articles could not be loaded for ' + boroughStr + '.' + 'Err Msg' + e.message;
+        ErroWikki(content,e);
     });
 }
 
-function Error(content) {
+function ErroWikki(content) {
     articleModel.id = "wikkepedia" + 0 ;
     articleModel.url = '';
     articleModel.content = content;
