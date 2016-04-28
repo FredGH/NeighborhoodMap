@@ -114,8 +114,8 @@ hr {
     max-height: 540px;
     background-color: rgba(256,256,256,.9);
     border: solid 2px mediumseagreen;
-    overflow: hidden;
-    }
+    overflow: scroll;
+}
 
 @media screen and (max-width: 770px)  and (max-height: 900px) {
 
@@ -124,7 +124,7 @@ hr {
         max-height: 200px;
         background-color: rgba(256,256,256,.9);
         border: solid 2px mediumseagreen;
-        overflow: hidden;
+        overflow: scroll;
     }
 
     #search-container {
@@ -133,12 +133,11 @@ hr {
         left: 10px;
         z-index: 1;
         width: 98px;
-        height: 10px;
     }
 
     #wikki-container{
         position: fixed;
-        top: 590px;
+        top: 250px;
         left: 10px;
         width: 200px;
         height:100px;
@@ -152,7 +151,7 @@ hr {
 
     #nytimes-container {
         position: fixed;
-        top: 700px;
+        top: 355px;
         left: 10px;
         width: 200px;
         height: 100px;
@@ -162,12 +161,6 @@ hr {
         overflow: scroll;
         background: rgba(256,256,256,.9);
     }
-}
-
-#scroller {
-    height: 480px;
-    overflow: scroll;
-    margin: 0 5px;
 }
 
 #reset:hover {
