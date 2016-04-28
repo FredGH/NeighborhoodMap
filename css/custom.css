@@ -119,6 +119,14 @@ hr {
 
 @media screen and (max-width: 770px)  and (max-height: 900px) {
 
+    #search-nav {
+        width: 205%;
+        max-height: 200px;
+        background-color: rgba(256,256,256,.9);
+        border: solid 2px mediumseagreen;
+        overflow: hidden;
+    }
+
     #search-container {
         position: fixed;
         top: 45px;
