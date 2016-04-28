@@ -35,3 +35,25 @@ Research and implement third-party APIs that provide additional information abou
 5. Use of defer and Async in function loadGoogleMap()
 6. General refactoring and cleaning of the code
 
+### List of bug fixes 28-April-2016
+Correction of the following:
+1 - modification of js/utilities/wikkipediaStream.js
+   - wikkipedia articles are pointing to the borough instead of the city
+   - Timeout function has been fixed
+   - The article list is cleared out before adding new articles to a given location.
+   - Error function has been renamed
+
+2 - modification of index.html
+   - loadArticles() now takes a parameter when called
+
+3  - modification of js/utilities/googleMapGenerator.js
+    - Error function has been renamed
+    - Maker now bounce the first time when clicked
+    - No marker is loaded on the map initially, when the user click an item in the list, then the item marker and info window appear. None of the others do.
+
+4  - modification of js/models/markersModel.js
+    - addition of some  unique location
+
+5  - removal of js/utilities/windowResizing.js
+
+6 -  All application components are usable across modern desktop, tablet, and phone browsers.
