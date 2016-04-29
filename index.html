@@ -24,7 +24,7 @@
                     <script type="text/html" id="wikkipedia">
                         <div data-bind="visible: visible">
                             <li>
-                                <a data-bind="click: function(data, event) { viewModel.openInNewTab(url, null, data, event) }"><p data-bind="text: content"></p></a>
+                                <a data-bind="click: (function(){ return function(data, event) { viewModel.openInNewTab(url, null, data, event)}})(url, null)"><p data-bind="text: content"></p></a>
                             </li>
                         </div>
                     </script>
@@ -42,7 +42,7 @@
                         <script type="text/html" id="nyTimes">
                             <div data-bind="visible: visible">
                                 <li>
-                                    <a data-bind="click: function(data, event) { viewModel.openInNewTab(url, null, data, event)}"><p data-bind="text: content"></p></a>
+                                    <a data-bind="click: (function(){ return function(data, event) { viewModel.openInNewTab(url, null, data, event)}})(url, null)"><p data-bind="text: content"></p></a>
                                 </li>
                             </div>
                     </script>
