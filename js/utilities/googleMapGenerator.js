@@ -4,7 +4,7 @@ var streetViewImage;
 var streetViewUrl = 'https://maps.googleapis.com/maps/api/streetview?size=180x90&location=';
 
 //Alert the user in case of an error when loading the google map (called by loadGoogleMap())
-function googleErrorFunction() {
+function googleError() {
     alert('The google map could not be loaded...');
 }
 
@@ -68,8 +68,8 @@ function setMarkers(mm) {
             name: mm[i].name,
         });
 
-        //no marker is shown on init
-        mm[i].holdMarker.setVisible(false);
+
+        mm[i].holdMarker.setVisible(true);
         //mm[i].holdMarker.holdMarker.setVisible(false);
 
         //Set google street view images within info windows

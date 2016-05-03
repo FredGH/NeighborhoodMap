@@ -18,9 +18,11 @@ function getNyTimesInfo(marker) {
             var article = articles[i];
 
             //push data url and content to the models
+            var articleModel = {};
+            articleStr = article.snippet;
             articleModel.id = "nyTimes" + i;
             articleModel.url = article.web_url;
-            articleModel.content = article.snippet;
+            articleModel.content = articleStr;
             articleModel.visible = true;
             nyTimesArrayModel.push(articleModel);
         };

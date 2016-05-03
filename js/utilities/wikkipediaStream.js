@@ -10,20 +10,18 @@ function getWikkiInfo(marker) {
             var articleList = response[1];
             wikkipediaArrayModel.removeAll();
             for (var i = 0, len =  articleList.length;  i < len  ; i++) {
-                articleStr = articleList[i];
+                var articleStr = articleList[i];
 
                 //push data url and content to the models
+                var articleModel = {};
+                articleStr = articleList[i];
                 articleModel.id = "wikkepedia" + i;
                 articleModel.url = 'http://en.wikipedia.org/wiki/' + articleStr;
                 articleModel.content = articleStr;
                 articleModel.visible = true;
                 wikkipediaArrayModel.push(articleModel);
+
             };
-
-            //stop the timeout for happening....Else it would happen at all time,
-            // even when the timeout is not passed
-            clearTimeout(wikiRequestTimeOut);
-
         }
     }).error(function(e) {
         var content = 'Wikkipedia Articles could not be loaded for ' + boroughStr + '.' + 'Err Msg' + e.message;
