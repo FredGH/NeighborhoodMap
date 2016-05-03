@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="63c745f9-dadf-44a4-bc10-eb23ab8012e7" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/utilities/googleMapGenerator.js" afterPath="$PROJECT_DIR$/js/utilities/googleMapGenerator.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/viewModels/markerViewModel.js" afterPath="$PROJECT_DIR$/js/viewModels/markerViewModel.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/utilities/nyTimesStream.js" afterPath="$PROJECT_DIR$/js/utilities/nyTimesStream.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/utilities/wikkipediaStream.js" afterPath="$PROJECT_DIR$/js/utilities/wikkipediaStream.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
     </list>
     <ignored path="Neighborhood-GoogleMap.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,112 +22,7 @@
     <favorites_list name="Neighborhood-GoogleMap" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="wikkipediaStream.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/utilities/wikkipediaStream.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="16" column="26" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="nyTimesStream.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/utilities/nyTimesStream.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="23" column="39" selection-start-line="23" selection-start-column="39" selection-end-line="23" selection-end-column="39" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="googleMapGenerator.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/utilities/googleMapGenerator.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="79" column="39" selection-start-line="79" selection-start-column="39" selection-end-line="79" selection-end-column="39" />
-              <folding>
-                <marker date="1462288128779" expanded="true" signature="2951:2969" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="markerViewModel.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/viewModels/markerViewModel.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="45" column="42" selection-start-line="45" selection-start-column="42" selection-end-line="45" selection-end-column="42" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="markersModel.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/models/markersModel.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="7" column="12" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="custom.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/custom.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="50" column="1" selection-start-line="50" selection-start-column="1" selection-end-line="50" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="32" column="52" selection-start-line="32" selection-start-column="52" selection-end-line="32" selection-end-column="52" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="articleModel.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/models/articleModel.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="articleModelCollection.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/models/articleModelCollection.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="6" column="38" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="38" />
-              <folding>
-                <element signature="e#0#45#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -155,13 +45,13 @@
         <option value="$PROJECT_DIR$/js/models/articleModel.js" />
         <option value="$PROJECT_DIR$/js/models/articleModelCollection.js" />
         <option value="$PROJECT_DIR$/js/models/markersModel.js" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/css/custom.css" />
         <option value="$PROJECT_DIR$/js/utilities/wikkipediaStream.js" />
         <option value="$PROJECT_DIR$/js/utilities/nyTimesStream.js" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/js/utilities/googleMapGenerator.js" />
         <option value="$PROJECT_DIR$/js/viewModels/markerViewModel.js" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -401,8 +291,8 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="54" y="-8" width="1874" height="1096" extended-state="6" />
-    <editor active="true" />
+    <frame x="54" y="-8" width="1874" height="1096" extended-state="7" />
+    <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22984749" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -541,7 +431,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="122" column="31" selection-start-line="122" selection-start-column="9" selection-end-line="122" selection-end-column="31" />
           <folding>
-            <marker date="1462288128779" expanded="true" signature="2951:2969" placeholder="..." />
+            <marker date="1462288128779" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -583,7 +473,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="122" column="31" selection-start-line="122" selection-start-column="9" selection-end-line="122" selection-end-column="31" />
           <folding>
-            <marker date="1462288128779" expanded="true" signature="2951:2969" placeholder="..." />
+            <marker date="1462288128779" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -660,7 +550,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="101" column="14" selection-start-line="101" selection-start-column="14" selection-end-line="101" selection-end-column="14" />
           <folding>
-            <marker date="1462288128779" expanded="true" signature="2951:2969" placeholder="..." />
+            <marker date="1462288128779" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -713,7 +603,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="101" column="47" selection-start-line="100" selection-start-column="52" selection-end-line="101" selection-end-column="47" />
           <folding>
-            <marker date="1462288128779" expanded="true" signature="2951:2969" placeholder="..." />
+            <marker date="1462288128779" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -758,7 +648,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="101" column="47" selection-start-line="100" selection-start-column="52" selection-end-line="101" selection-end-column="47" />
           <folding>
-            <marker date="1462288128779" expanded="true" signature="2951:2969" placeholder="..." />
+            <marker date="1462288128779" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -777,7 +667,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/models/articleModel.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="0.111964874">
           <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
           <folding />
         </state>
@@ -793,19 +683,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/models/articleModelCollection.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="0.07464325">
           <caret line="6" column="38" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="38" />
           <folding>
             <element signature="e#0#45#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="32" column="52" selection-start-line="32" selection-start-column="52" selection-end-line="32" selection-end-column="52" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -838,7 +720,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="79" column="39" selection-start-line="79" selection-start-column="39" selection-end-line="79" selection-end-column="39" />
           <folding>
-            <marker date="1462288128779" expanded="true" signature="2951:2969" placeholder="..." />
+            <marker date="1462288128779" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -855,6 +737,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.88461536">
+          <caret line="64" column="3" selection-start-line="64" selection-start-column="3" selection-end-line="64" selection-end-column="3" />
           <folding />
         </state>
       </provider>
