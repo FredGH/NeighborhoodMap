@@ -58,12 +58,15 @@ Correction of the following:
 
 6 -  All application components are usable across modern desktop, tablet, and phone browsers.
 
-
-feat: Modification following review 4
-
 ### List of bug fixes 03-May-2016
 1. Fix the click event in the index.html file that did not displaying the correct wikki or NY selected articles.
 2. setTimeOut() redundant function removed
 3. GoogleError linked in the index.html
 4. All markers are shown on load.
 5. Filter fixed
+
+### List of bug fixes 03-May-2016
+1. removal of <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js?callback=googleSuccess" onerror="googleError()"></script>
+and implementation of the onerror in the function loadGoogleMap()
+2.  Bootstrap JavaScript  now loaded after  jQuery is loaded
+3. On close of infowindow all markers appear on map
