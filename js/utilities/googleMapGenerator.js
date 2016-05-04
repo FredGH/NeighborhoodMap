@@ -16,11 +16,12 @@ function loadGoogleMap() {
      //Async allows the script to be downloaded in the background without blocking.
      //Then, the moment it finishes downloading, rendering is blocked and that script executes.
      //Render resumes when the script has executed.
-    script.async = "async"
+    script.async = "async";
      //Defer does the same thing, except claims to guarantee that scripts execute in the order they were specified on the page,
      //and that they will be executed after the document has finished parsing.
      // So, some scripts may finish downloading then sit and wait for scripts that downloaded later but appeared before them.
-    script.defer = "defer"
+    script.defer = "defer";
+    script.onerror = googleError;
     document.body.appendChild(script);
 }
 
@@ -38,6 +39,12 @@ function initialise() {
     infowindow = new google.maps.InfoWindow({
         content: ""
     });
+
+    new google.maps.event.addListener(infowindow, 'closeclick', function() {
+        for (var i =0; i <  markersModel.length; i++) {
+            markersModel[i].holdMarker.setVisible(true);
+        }
+     });
 
     setMarkers(markersModel);
 }
